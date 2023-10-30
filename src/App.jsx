@@ -31,26 +31,33 @@ function App() {
   };
 
   return (
-    <div>
-      <div>
+    <div className='mainContainer'>
+      <h2 style={{color: 'white'}}>TO-DO APP</h2>
+      <div className='inputContainer'>
         <input type="text"
           placeholder='Type here...'
           value={inputValue.name}
           onInput={handleOnInput} />
         <button
+        className='addBtn'
           disabled={inputValue === ''}
           onClick={addTasks}>Add</button>
       </div>
 
       <div>
-        <ul>
+        <h3 style={{color: 'white'}}>List of tasks</h3>
+        <br />
+        <ul className='tasksContainer'>
           {tasks.length === 0 ? (
           <p>There are no tasks to do. Enjoy!</p>
           ):(
             tasks.map((task) => (
-            <li key={task.id}>
+            <li className='listItem'
+            key={task.id}>
               <span>{task.name}</span>
-              <button onClick={() => handleDelete(task)}>Delete</button></li>
+              <button 
+              className='deleteBtn'
+              onClick={() => handleDelete(task)}>Delete</button></li>
           )))}
         </ul>
       </div>
