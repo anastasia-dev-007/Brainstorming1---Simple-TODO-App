@@ -40,7 +40,7 @@ function App() {
           onInput={handleOnInput} />
         <button
         className='addBtn'
-          disabled={inputValue === ''}
+          disabled={inputValue.name === ''}
           onClick={addTasks}>Add</button>
       </div>
 
